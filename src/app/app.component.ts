@@ -28,7 +28,7 @@ export class AppComponent {
     
       this.userForm = this.fb.group({
         'name' : this.fb.control('',[Validators.required,Validators.minLength(5),Validators.maxLength(20)]),
-        'age' : this.fb.control('',[Validators.required,Validators.min(18),Validators.max(55)]),
+        'age' : this.fb.control('30',[Validators.required,Validators.min(18),Validators.max(55)]),
         'country' : this.fb.control('IN'),
         'mobile' : this.fb.control('',Validators.required),
         

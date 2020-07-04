@@ -1,0 +1,21 @@
+#form1
+{
+    float: left;
+}
+#table1
+{
+    display: inline-block;
+    margin-left: 700px;
+}
+
+#form > label
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#form > input
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,103 @@
+<div class="row">
+  <div class="col-lg-6" id = 'form1'>
+    
+<form [formGroup]="userForm" (submit)="submitForm()">
+  <label for="username">User Name: </label>
+  <input type="text" name="username" formControlName="name" />
+  <span *ngIf="!userForm.get('name').valid && userForm.get('name').dirty">Name should in length between 5 - 20 characters</span>
+  <span *ngIf="userForm.get('name').touched && !userForm.get('name').valid">This field is required</span>
+  <br /><br />
+  <label for="age">Age: </label>
+  <input type="number" name="age" formControlName="age" />
+  <br /><br />
+  <label for="country">Country: </label>
+  <select name="country" id="" formControlName="country">
+    <option value="IN">India</option>
+    <option value="US">America</option>
+  </select>
+  <br /><br />
+  <label for="">Mobile: </label>
+  <input type="number" formControlName="mobile" />
+  <br /><br />
+  <label for = 'gender'>Gender:</label>
+  <input type = 'radio' formControlName = 'gender' value="M">
+  <label>Male</label>
+  <input type = 'radio' formControlName = 'gender' value="F">
+  <label>Female</label>
+  <br> <br>
+  <label for = 'ms'>Married:</label>
+  <input type = 'radio' formControlName = 'ms' value="yes">
+  <label>Yes</label>
+  <input type = 'radio' formControlName = 'ms' value="no">
+  <label>No</label>
+  <h4>Address 1</h4>
+  <div formArrayName="address" *ngFor="let address of userForm.get('address')['controls'];let i = index">
+      <div [formGroupName]="i">
+        <label for="">Street: </label>
+        <input type="text" formControlName="street">
+        <span *ngIf="userForm.get('address').touched && !userForm.get('address').valid">This field is required</span>
+        <br><br />
+        <label for="">Zip Code: </label>
+        <input type="text" formControlName="zipcode">
+      </div>
+      
+  </div>
+  <h4>Address 2</h4>
+  <div formArrayName="address" *ngFor="let address of userForm.get('address')['controls'];let i = index">
+      <div [formGroupName]="i">
+        <label for="">Street: </label>
+        <input type="text" formControlName="street">
+        <span *ngIf="userForm.get('address').touched && !userForm.get('address').valid">This field is required</span>
+        <br><br />
+        <label for="">Zip Code: </label>
+        <input type="text" formControlName="zipcode">
+      </div>
+      
+  </div>
+  <h4>Address 3</h4>
+  <div formArrayName="address" *ngFor="let address of userForm.get('address')['controls'];let i = index">
+      <div [formGroupName]="i">
+        <label for="">Street: </label>
+        <input type="text" formControlName="street">
+        <span *ngIf="userForm.get('address').touched && !userForm.get('address').valid">This field is required</span>
+        <br><br />
+        <label for="">Zip Code: </label>
+        <input type="text" formControlName="zipcode">
+      </div>
+      
+  </div>
+  <br>
+ 
+  <br>
+  <input type="submit" value="Submit" />
+</form>
+
+  </div>
+  <div class="col-lg-6" id = 'table1'>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          
+          <th scope="col">Username</th>
+          <th scope="col">Age</th>
+          <th scope="col">Country</th>
+          <th scope="col">Mobile</th>
+          <th scope="col">Gender</th>
+          <th scope="col">Married</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of userDetails, let num =index">
+          
+          <td *ngIf="user.show">{{user.name}}</td>
+          <td *ngIf="user.show">{{user.age}}</td>
+          <td *ngIf="user.show">{{user.country}}</td>
+          <td *ngIf="user.show">{{user.mobile}}</td>
+          <td *ngIf="user.show">{{user.gender}}</td>
+          <td *ngIf="user.show">{{user.ms}}</td>
+          <td *ngIf="user.show"><button (click) = "user.show = false">delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

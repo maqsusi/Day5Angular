@@ -9,7 +9,7 @@
   <br /><br />
   <label for="age">Age (b/w 18 and 55): </label>
   <input type="number" name="age" formControlName="age" />
-  <span *ngIf="!userForm.get('age').valid">Age should be between 18 - 55 characters</span>
+  <span *ngIf="!userForm.get('age').valid && userForm.get('age').dirty">Age should be between 18 - 55 characters</span>
   <br /><br />
   <label for="country">Country: </label>
   <select name="country" id="" formControlName="country">

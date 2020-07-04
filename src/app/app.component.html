@@ -7,7 +7,7 @@
   <span *ngIf="!userForm.get('name').valid && userForm.get('name').dirty">Name should in length between 5 - 20 characters</span>
   <span *ngIf="userForm.get('name').touched && !userForm.get('name').valid">This field is required</span>
   <br /><br />
-  <label for="age">Age: </label>
+  <label for="age">Age (b/w 18 and 55): </label>
   <input type="number" name="age" formControlName="age" />
   <span *ngIf="!userForm.get('age').valid">Age should be between 18 - 55 characters</span>
   <br /><br />

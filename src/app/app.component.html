@@ -8,7 +8,7 @@
   <span *ngIf="userForm.get('name').touched && !userForm.get('name').valid">This field is required</span>
   <br /><br />
   <label for="age">Age (b/w 18 and 55): </label>
-  <input type="number" name="age" formControlName="age" />
+  <input type="number" name="age" formControlName="age" /><br>
   <span *ngIf="!userForm.get('age').valid && userForm.get('age').dirty">Age should be between 18 - 55 characters</span>
   <br /><br />
   <label for="country">Country: </label>
